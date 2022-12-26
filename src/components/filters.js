@@ -21,14 +21,14 @@ const FiltersStyled = styled.div`
  }
 `
 
-function Filters({ repoListCount, setSearch}) {
+function Filters({ repoListCount, setSearch, setPickLanguage}) {
     function handleChange(event) {
      setSearch(event.target.value)
     }
     return (
         <FiltersStyled>
         <h3 className='count'>
-            repositorios{repoListCount}
+            Repositorios ({repoListCount})
         </h3>
         <div className='action-list'>
             <InputText 
@@ -41,8 +41,9 @@ function Filters({ repoListCount, setSearch}) {
                 <option value='all' disabled>all</option>
                 <option value='forks'>forks</option>
             </Selector>
-            <Selector>
-                <option value='language' disabled>Languages</option>
+            <Selector setLanguage={setPickLanguage}  defaultValue={"type"} value={"language"} >
+                <option value='language' disabled>Language</option>
+                <option value="all">All</option>
                 <option value='html'>Html</option>
                 <option value='css'>CSS</option>
                 <option value='JavaScript'>JavaScript</option>
