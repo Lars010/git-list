@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import RepoItem from './repo-item'
+import NoRepositories from './no-repositories'
 
 const RepoListStyled = styled.div`
  grid-area: repo-list;
@@ -26,6 +27,9 @@ function RepoList({ repoList, search, pickLanguage }) {
         })
     }
 
+ if (list.length === 0)
+ return (<NoRepositories />)
+ else
 
     return (
         <RepoListStyled>
