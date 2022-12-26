@@ -21,39 +21,45 @@ const FiltersStyled = styled.div`
  }
 `
 
-function Filters({ repoListCount, setSearch}) {
+function Filters({ repoListCount, setSearch, setPickLanguage }) {
     function handleChange(event) {
-     setSearch(event.target.value)
+        setSearch(event.target.value)
     }
+
+    const changeLanguage = (evt) => {        
+        setPickLanguage(evt.target.value);
+    }
+
     return (
         <FiltersStyled>
-        <h3 className='count'>
-            repositorios{repoListCount}
-        </h3>
-        <div className='action-list'>
-            <InputText 
-            placeholder='Busca un repositorio'
-            type='search'
-            onChange={handleChange}
-            />
-            <div className='select-list'>
-            <Selector>
-                <option value='all' disabled>all</option>
-                <option value='forks'>forks</option>
-            </Selector>
-            <Selector>
-                <option value='language' disabled>Languages</option>
-                <option value='html'>Html</option>
-                <option value='css'>CSS</option>
-                <option value='JavaScript'>JavaScript</option>
-            </Selector>
-            <Selector>
-                <option value='sort' disabled>Sort</option>
-                <option value='forks'>Stars</option>
-            </Selector>
+            <h3 className='count'>
+                Repositorios ({repoListCount})
+            </h3>
+            <div className='action-list'>
+                <InputText
+                    placeholder='Busca un repositorio'
+                    type='search'
+                    onChange={handleChange}
+                />
+                <div className='select-list'>
+                    <Selector>
+                        <option value='all' disabled>all</option>
+                        <option value='forks'>forks</option>
+                    </Selector>
+                    <Selector changeSelection={changeLanguage} defaultValue={"type"} value={"language"} >
+                        <option value='language' disabled>Language</option>
+                        <option value="all">All</option>
+                        <option value='html'>Html</option>
+                        <option value='css'>CSS</option>
+                        <option value='JavaScript'>JavaScript</option>
+                    </Selector>
+                    <Selector>
+                        <option value='sort' disabled>Sort</option>
+                        <option value='forks'>Stars</option>
+                    </Selector>
+                </div>
             </div>
-        </div>
-        <Separator />
+            <Separator />
         </FiltersStyled>
     )
 }

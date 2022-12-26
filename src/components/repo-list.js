@@ -9,11 +9,20 @@ const RepoListStyled = styled.div`
  /* background-color: orange; */
 `
 
-function RepoList({ repoList, search }) {
+function RepoList({ repoList, search, pickLanguage }) {
+
     let list = repoList
     if (search !== '') {
-        list = list.filter((item) => {            
+        list = list.filter((item) => {
             return item.name.toUpperCase().search(search.toUpperCase()) >= 0
+        })
+    }
+    
+    if (pickLanguage && pickLanguage !== '' && pickLanguage !== 'all') {
+        list = list.filter((item) => {
+            if (item.language) {
+                return item.language.toUpperCase() === pickLanguage.toUpperCase();
+            }
         })
     }
 
