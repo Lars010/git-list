@@ -8,7 +8,6 @@ import { getUser, getRepos } from './services/users'
 import { useParams } from 'react-router-dom'
 import Modal from './modal';
 
-//dasklnfjkasfaeoi
 function App() {
   const params = useParams()
   let username = params.user
