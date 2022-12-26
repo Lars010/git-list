@@ -10,10 +10,15 @@ padding-inline: 1rem;
 }
 `
 
-function Selector({ children }) {
+function Selector(props) {
+    const changeSelection = (evt) => {           
+        if (props.changeSelection)
+            props.changeSelection(evt);
+    }
+
     return (
-        <SelectorStyled>
-            { children }
+        <SelectorStyled onChange={changeSelection}>
+            { props.children }
         </SelectorStyled>
     )
 }

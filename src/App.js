@@ -44,7 +44,7 @@ function App() {
       <Modal isActive={modal} setModal={setModal} />
       <Profile {...user} />
       <Filters setSearch={setSearch} setPickLanguage={setPickLanguage} repoListCount={repos.length} />
-      <RepoList search={search} repoList={repos} picklanguage={pickLanguage} />
+          <RepoList search={search} repoList={repos} pickLanguage={pickLanguage} />
       <Search setModal={setModal} />
     </Layout>
   )
