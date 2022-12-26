@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Icon from './icon'
 import InputText from './imput-text'
 import Selector from './selector'
 import Separator from './separator'
