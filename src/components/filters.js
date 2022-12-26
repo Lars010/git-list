@@ -25,6 +25,7 @@ function Filters({ repoListCount, setSearch, setPickLanguage}) {
     function handleChange(event) {
      setSearch(event.target.value)
     }
+    
     return (
         <FiltersStyled>
         <h3 className='count'>
