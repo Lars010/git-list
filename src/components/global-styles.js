@@ -31,6 +31,13 @@ body {
     font: var(--body1-regular);
     margin: 0;
 }
+
+/* #light {
+    background-color: white;
+}
+#dark {
+    background-color: #0d1117;
+} */
 `
 
 export default GlobalStylesStyled

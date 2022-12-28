@@ -43,6 +43,55 @@ a:hover {
     margin-block-end: 1.5rem;
 }
 
+@media screen and (min-width: 768px) {
+    .avatar {
+        border-radius: 50%;
+    border: 1px solid var(--grey);
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-block-end: 1.5rem;
+    }
+}
+@media screen and (max-width: 414px) {
+  display: grid;
+  grid-template-areas: "user-responsive" "bio" "followers" "location" "blog" "contact" "action";
+
+  margin-inline-start: 1.25rem;
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin-inline-end: 1rem;
+    
+  }
+  .user-responsive {
+    display: flex;
+    grid-area: user-responsive;
+  }
+  .user-id {
+    display: block;
+  }
+  .bio {
+    grid-area: bio;
+  }
+  .followers {
+    grid-area: followers;
+  }
+  .location {
+    grid-area: location;
+  }
+  .blog {
+    grid-area: blog;
+  }
+  .contact {
+    grid-area: contact;
+  }
+  .buttons {
+    grid-area: action;
+  }
+  
+}
+
 `
 
 function Profile(props) {
@@ -50,9 +99,13 @@ function Profile(props) {
 
     return (
         <ProfileStyled>
+            <div className='user-responsive'>
             <img src={avatar_url} className='avatar' width='278' height='278' alt='' />
+            <div className='user-id'>
             <p className='name'>{name}</p>
             <p className='username'>{login}</p>
+            </div>
+            </div>
             <div className='buttons'>
                 <Button
                     text="Follow"
@@ -71,19 +124,19 @@ function Profile(props) {
                 {bio}
             </p>
             <p className='followers info'>
-                *{followers} <span>followers</span><span>*</span><span>{following}</span><span>following</span>
+                <Icon name='user' /> {followers} <span>followers</span><span>*</span><span>{following}</span><span>following</span>
             </p>
             {/* <p className='stars info'>
                 * 81
             </p> */}
             <p className='location info'>
-                * {location}
+                <Icon name='location' /> {location}
             </p>
-            <a className='info' href={blog} target='_blank' rel='noreferrer'>
-                {blog}
+            <a className='info blog' href={blog} target='_blank' rel='noreferrer'>
+                <Icon name='link' /> {blog}
             </a>
-            <a className='info' href={`https://twitter.com/${twitter_username}`} target='_blank' rel='noreferrer'>
-                @{twitter_username}
+            <a className='info contact' href={`https://twitter.com/${twitter_username}`} target='_blank' rel='noreferrer'>
+                <Icon name='twitter' /> {twitter_username}
             </a>
 
         </ProfileStyled>
