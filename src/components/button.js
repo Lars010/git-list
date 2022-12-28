@@ -20,6 +20,12 @@ text-decoration: none !important;
     background: var(--white);
     color: var(--button);
 }
+    @media screen and (max-width: 414px) {
+        & {
+            inline-size: 10rem;
+        }
+    
+}
 `
 
 function Button({ text, link, className, icon }) {

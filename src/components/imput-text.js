@@ -9,6 +9,10 @@ font: var(--body2-regular);
 border-radius: .5rem;
 color: var(--white);
 flex: 1;
+
+@media screen and (max-width: 360px) {
+inline-size: 22rem;
+}
 `
 
 // function ImputText() {
