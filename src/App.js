@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import Layout from './components/layout'
 import Profile from './components/profile';
 import Filters from './components/filters';
@@ -8,15 +8,14 @@ import { useState, useEffect } from 'react';
 import { getUser, getRepos } from './services/users'
 import { useParams } from 'react-router-dom'
 import Modal from './modal';
-import GlobalStylesStyled from './components/global-styles';
 import Switch from './components/switch';
 
 
 // export const ThemeContext = createContext(null);
-const GlobalTheme = styled(GlobalStylesStyled)`
-background-color: ${(props) => props.theme.body};
-color: ${(props) => props.theme.color};
-`
+// const GlobalTheme = styled(GlobalStylesStyled)`
+// background-color: ${(props) => props.theme.body};
+// color: ${(props) => props.theme.color};
+// `
 
 // const LayoutTheme = styled(Layout)`
 

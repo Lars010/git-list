@@ -24,6 +24,7 @@ function RepoList({ repoList, search, pickLanguage }) {
             if (item.language) {
                 return item.language.toUpperCase() === pickLanguage.toUpperCase();
             }
+            return false;
         })
     }
 

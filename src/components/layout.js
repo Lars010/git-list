@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import Switch from './switch'
-import Button from './button'
 
 const LayoutStyled = styled.main`
 
