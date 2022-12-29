@@ -11,6 +11,15 @@ color: var(--white);
 padding-inline: 1rem;
 & option {
     background: var(--buttonBG);
+
+    @media screen and (prefers-color-scheme: light) {
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+    color: var(--black-2);
+    &:focus {
+      background-color: var(--white);
+    }
+  }
 }
 `
 

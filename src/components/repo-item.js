@@ -58,6 +58,12 @@ color: var(--grey-1);
     text-transform: uppercase;
 }
 }
+@media screen and (prefers-color-scheme: light) {
+    .topicItem {
+      color: var(--primary);
+      background-color: #d5e8ff;
+    }
+  }
 `
 
 function RepoItem(props) {

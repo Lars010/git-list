@@ -89,8 +89,23 @@ a:hover {
   .buttons {
     grid-area: action;
   }
-  
 }
+
+  @media screen and (prefers-color-scheme: light) {
+    .name {
+      color: var(--black);
+    }
+    .info {
+      .counter {
+        color: var(--grey);
+      }
+    }
+    .bio {
+      color: var(--grey);
+    }
+  }
+  
+
 
 `
 

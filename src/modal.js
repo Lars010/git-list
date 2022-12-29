@@ -53,6 +53,11 @@ inline-size: 24rem;
     font: var(--headline2-semi-bold);
     margin: 0;
 }
+@media screen and (prefers-color-scheme: light) {
+    background-color: var(--white);
+    color: var(--black-2);
+    border: 2px solid var(--grey);
+  }
 
 `
 

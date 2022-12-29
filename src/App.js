@@ -26,7 +26,7 @@ const darkTheme = {
   title: "#fff",
   subtitle: "#b6b6b6",
   color: "var(--grey)"
-}
+};
 
 const lightTheme = {
   body: "#1c1c1c",
@@ -51,6 +51,8 @@ function App() {
 
   const toggleTheme = () => {
     setTheme(isLightTheme ? "dark" : "light");
+    console.log(theme);
+    // console.log(isLightTheme ? lightTheme : darkTheme);
   };
   
 
